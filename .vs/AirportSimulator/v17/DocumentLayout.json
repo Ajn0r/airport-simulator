@@ -5,6 +5,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|c:\\users\\\u00E4gare\\source\\repos\\airportsimulator\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|c:\\users\\\u00E4gare\\source\\repos\\airportsimulator\\controltower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|solutionrelative:controltower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|c:\\users\\\u00E4gare\\source\\repos\\airportsimulator\\airplane.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|solutionrelative:airplane.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|c:\\users\\\u00E4gare\\source\\repos\\airportsimulator\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +26,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Airplane.cs",
+              "DocumentMoniker": "C:\\Users\\\u00C4GARE\\source\\repos\\AirportSimulator\\Airplane.cs",
+              "RelativeDocumentMoniker": "Airplane.cs",
+              "ToolTip": "C:\\Users\\\u00C4GARE\\source\\repos\\AirportSimulator\\Airplane.cs",
+              "RelativeToolTip": "Airplane.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T16:10:30.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ControlTower.cs",
+              "DocumentMoniker": "C:\\Users\\\u00C4GARE\\source\\repos\\AirportSimulator\\ControlTower.cs",
+              "RelativeDocumentMoniker": "ControlTower.cs",
+              "ToolTip": "C:\\Users\\\u00C4GARE\\source\\repos\\AirportSimulator\\ControlTower.cs",
+              "RelativeToolTip": "ControlTower.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T16:09:49.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\\u00C4GARE\\source\\repos\\AirportSimulator\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "C:\\Users\\\u00C4GARE\\source\\repos\\AirportSimulator\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-22T16:06:37.591Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +74,7 @@
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\\u00C4GARE\\source\\repos\\AirportSimulator\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAADcAAAAAAAAAAAAAAEoAAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-22T16:06:32.398Z",
               "EditorCaption": ""
