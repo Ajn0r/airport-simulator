@@ -20,6 +20,7 @@ namespace AirportSimulator
         }
         public bool IsTakeOffSubscribed { get; set; }
         public bool OpenWindow { get; set; }
+        public AirplaneWindow airplaneWindow { get; set; }
 
         public Airplane(string name, string flightId, string destination, double flightTime)
         {
@@ -38,13 +39,14 @@ namespace AirportSimulator
         private void OpenAirplaneWindow()
         {
             // Create a new instance of the AirplaneWindow
-            AirplaneWindow airplaneWindow = new AirplaneWindow(this);
+            airplaneWindow = new AirplaneWindow(this);
             // Subscribe to the TakeOffButtonClicked event
             airplaneWindow.TakeOffButtonClicked += TakingOff;
             airplaneWindow.LandButtonClicked += Land;
             airplaneWindow.Closing += ClosingWindow;
             airplaneWindow.Show(); // Show the window
             OpenWindow = true;
+            airplaneWindow.DataContext = this;
         }
 
         /// <summary>
@@ -111,6 +113,8 @@ namespace AirportSimulator
             // Invoke the event to print the message that the airplane is taking off
             AirplaneEventArgs args = new AirplaneEventArgs(flightinfo, " taking off to destination: " + Destination + ", " + LocalTime);
             TakeOff?.Invoke(this, args);
+
+            airplaneWindow.UpdateContext(this);
         }
 
         /// <summary>
@@ -124,8 +128,7 @@ namespace AirportSimulator
                 return;
             }
             // Calls the method to open the airplane window
-            OpenAirplaneWindow();
-            
+            OpenAirplaneWindow(); 
         }
 
         private void Land(object sender, EventArgs e)
@@ -140,6 +143,8 @@ namespace AirportSimulator
             AirplaneEventArgs args = new AirplaneEventArgs(flightinfo, " has landed at " + Destination + " at: " + LocalTime);
             Landing?.Invoke(this, args);
             Destination = "Home";
+            airplaneWindow.UpdateContext(this);
+
         }
         /// <summary>
         /// Method that handles when the airplane is landing

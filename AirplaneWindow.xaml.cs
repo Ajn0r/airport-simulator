@@ -40,8 +40,19 @@ namespace AirportSimulator
         private void TakeOffButton_Click(object sender, RoutedEventArgs e)
         {
             TakeOffButtonClicked?.Invoke(this, EventArgs.Empty);
-    
-           
+
+        }
+
+        /// <summary>
+        /// Method to update the context of the airplane window with the airplane object that is passed in, an quick fix to make it work
+        /// </summary>
+        /// <param name="airplane"></param>
+        public void UpdateContext(Airplane airplane)
+        {
+            txtDest.Text = airplane.Destination;
+            txtStatus.Text = airplane.Status;
+            txtAlt.Text = airplane.Altitude.ToString();
+
         }
     }
 }
