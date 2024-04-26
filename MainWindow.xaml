@@ -60,7 +60,7 @@
             <Button Name="btnCngAlt" Content="Request altitude change" Click="btnChangeAltitude_Click" Width="150" Padding="5" />
         </StackPanel>
 
-        <ListView Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" MinHeight="200">
+        <ListView Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" MinHeight="200" x:Name="lstMessages">
 
         </ListView>
 

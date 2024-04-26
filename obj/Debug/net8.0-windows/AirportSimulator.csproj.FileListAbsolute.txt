@@ -19,3 +19,5 @@ C:\Users\ÄGARE\source\repos\AirportSimulator\obj\Debug\net8.0-windows\refint\Ai
 C:\Users\ÄGARE\source\repos\AirportSimulator\obj\Debug\net8.0-windows\AirportSimulator.pdb
 C:\Users\ÄGARE\source\repos\AirportSimulator\obj\Debug\net8.0-windows\AirportSimulator.genruntimeconfig.cache
 C:\Users\ÄGARE\source\repos\AirportSimulator\obj\Debug\net8.0-windows\ref\AirportSimulator.dll
+C:\Users\ÄGARE\source\repos\AirportSimulator\obj\Debug\net8.0-windows\AirplaneWindow.g.cs
+C:\Users\ÄGARE\source\repos\AirportSimulator\obj\Debug\net8.0-windows\AirplaneWindow.baml

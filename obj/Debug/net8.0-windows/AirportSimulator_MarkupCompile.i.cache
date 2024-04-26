@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\ÄGARE\source\repos\AirportSimulator\App.xaml
-11407045341
+2635564646
 
-8398109897
+10-1088659767
 198155382431
-MainWindow.xaml;
+AirplaneWindow.xaml;MainWindow.xaml;
 
-False
+True
 
