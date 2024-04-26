@@ -17,7 +17,6 @@ namespace AirportSimulator
         public string Status {
             // get the value
             get => canLand ? "In the air" : "On the ground";
-            set => Status = value;
         }
         public bool IsTakeOffSubscribed { get; set; }
         public bool OpenWindow { get; set; }
@@ -88,27 +87,30 @@ namespace AirportSimulator
         private void TakingOff(object sender, EventArgs e)
         {
             string flightinfo = Name + " with flight Id: " + FlightID;
+            // Check if the airplane is already in the air, and if so, display a message and return 
             if (canLand)
             {
                 MessageBox.Show(Name + " is already in the air, please wait until it has landed or land now");
                 return;
             }
-            AirplaneEventArgs args = new AirplaneEventArgs(flightinfo, " taking off to destination: " + Destination + ", " + LocalTime);
-            TakeOff?.Invoke(this, args);
-            canLand = true;
             
+            canLand = true;
             Altitude = 11500;
-            // Get the current time and convert it to a TimeOnly object to set the local time
-            DateTime currentTime = DateTime.Now;
-            LocalTime = TimeOnly.FromDateTime(currentTime);
+            // Check if the timer is not set up, and set it in that case
             if (timer == null)
             {
+                // Get the current time and convert it to a TimeOnly object to set the local time
+                DateTime currentTime = DateTime.Now;
+                LocalTime = TimeOnly.FromDateTime(currentTime);
                 SetUpTimer();
-            }
-            else
+            } else // else if the timer has been started before, start it again
             {
                 timer.Start();
             }
+
+            // Invoke the event to print the message that the airplane is taking off
+            AirplaneEventArgs args = new AirplaneEventArgs(flightinfo, " taking off to destination: " + Destination + ", " + LocalTime);
+            TakeOff?.Invoke(this, args);
         }
 
         /// <summary>
