@@ -42,16 +42,18 @@
             <Label Grid.Row="3" Grid.Column="0" Content="Flight time"/>
             <TextBox Grid.Row="3" Grid.Column="1" Name="txtFlightTime" Padding="3" Margin="0, 3, 0, 0"/>
         </Grid>
-        <ListView Name="lstPlanes" Grid.Column="1" Grid.Row="0" MinWidth="450" Margin="10, 0, 0, 0">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="100"/>
-                    <GridViewColumn Header="Flight ID" DisplayMemberBinding="{Binding FlightID}" Width="75"/>
-                    <GridViewColumn Header="Destination" DisplayMemberBinding="{Binding Destination}" Width="150"/>
-
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="0" MinWidth="450" Margin="10, 0, 0, 0">
+                <ListView Name="lstPlanes" Height="130">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="120"/>
+                            <GridViewColumn Header="Flight ID" DisplayMemberBinding="{Binding FlightID}" Width="85"/>
+                            <GridViewColumn Header="Destination" DisplayMemberBinding="{Binding Destination}" Width="150"/>
+                            <GridViewColumn Header="Flight time" DisplayMemberBinding="{Binding FlightTime}" Width="75"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </ScrollViewer>
 
         <!-- Buttons -->
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="15" >
@@ -60,9 +62,11 @@
             <Button Name="btnCngAlt" Content="Request altitude change" Click="btnChangeAltitude_Click" Width="150" Padding="5" />
         </StackPanel>
 
-        <ListView Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" MinHeight="200" x:Name="lstMessages">
+        <ScrollViewer Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" >
+            <ListView Height="250" Name="lstMessages"/>
+        </ScrollViewer>
 
-        </ListView>
+        
 
     </Grid>
 </Window>

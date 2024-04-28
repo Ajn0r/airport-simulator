@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
+using Microsoft.VisualBasic;
 
 namespace AirportSimulator
 {
@@ -20,12 +21,45 @@ namespace AirportSimulator
         }
         public List<Airplane> Airplanes { get => airplanes; set => airplanes = value; }
 
-        // public event EventHandler<AirplaneEventArgs> SendToRunway;
+        // delegate and event for changing the altitude that the airplane will be listening to
+        public delegate void ChangeAltitudeDelegate(double altitude);
+        public event ChangeAltitudeDelegate ChangeAltitudeRequested;
 
+        /// <summary>
+        /// Method to add an airplane to the list of airplanes in the control tower
+        /// </summary>
+        /// <param name="airplane"></param>
         public void AddAirplane(Airplane airplane)
         {
-            airplanes?.Add(airplane); 
+            airplanes?.Add(airplane);
+            
         }
+
+        /// <summary>
+        /// Method to open a window to change the altitude of an airplane
+        /// </summary>
+        /// <param name="airplane"></param>
+        public void OpenAltWindow(Airplane airplane)
+        {
+            // Using a Inputbox to get the new altitude, found insperation here: https://learn.microsoft.com/en-us/dotnet/api/microsoft.visualbasic.interaction.inputbox?view=net-8.0
+            string newAltitude = Interaction.InputBox("Enter the new altitude", "Change Altitude", airplane.Altitude.ToString());
+            if (double.TryParse(newAltitude, out double altitude))
+            {
+                // Check if the plane is already subscribed to the event, if not, subscribe to it
+                if (!airplane.IsAltitudeChangeSubscribed)
+                {
+                    airplane.SubscribeToAltitudeChange(this);
+                    airplane.IsAltitudeChangeSubscribed = true;
+                }
+                // Subscribe to the Altitude change event in the airplane class when the window is opened
+                airplane.AltitudeChanged += OnDisplayInfo;
+                // Invoke the event with the new altitude as a parameter, the airplane class is listening to this event and will change the altitude
+                ChangeAltitudeRequested?.Invoke(altitude);
+            }
+            // Remove the subscription to the event when the window is closed to prevent it from being called multiple times
+            airplane.AltitudeChanged -= OnDisplayInfo;
+        }
+
 
         /// <summary>
         /// Method to order an airplane to take off
@@ -80,11 +114,26 @@ namespace AirportSimulator
             return ok;
         }
 
-        public void OrderChangeAltitude(int index, int altitude)
+        /// <summary>
+        /// Method to order an airplane to change altitude
+        /// </summary>
+        /// <param name="index"></param>
+        public void OrderChangeAltitude(int index)
         {
-            throw new NotImplementedException();
+            if (CheckIndex(index))
+            {
+                // Get the airplane at the index
+                Airplane airplane = airplanes[index];
+                // Open the window to change the altitude and pass the airplane object to it
+                OpenAltWindow(airplane);
+            }
         }
 
+        /// <summary>
+        /// Method that is handeling all the printing of the information that is displayed in the listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnDisplayInfo(object sender, AirplaneEventArgs e)
         {
             // Display the information in the listbox

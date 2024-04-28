@@ -15,10 +15,11 @@ namespace AirportSimulator
         
         public bool canLand { get; set; }
         public string Status {
-            // get the value
+            // get the value, only used to display the status of the airplane in the airplane window
             get => canLand ? "In the air" : "On the ground";
         }
         public bool IsTakeOffSubscribed { get; set; }
+        public bool IsAltitudeChangeSubscribed { get; set; }
         public bool OpenWindow { get; set; }
         public AirplaneWindow airplaneWindow { get; set; }
 
@@ -32,6 +33,7 @@ namespace AirportSimulator
 
         public event EventHandler<AirplaneEventArgs> TakeOff;
         public event EventHandler<AirplaneEventArgs> Landing;
+        public event EventHandler<AirplaneEventArgs> AltitudeChanged;
 
         /// <summary>
         /// Method that opens the airplane window for the airplane and subscribes to the Takeoff and Landig button events
@@ -131,18 +133,27 @@ namespace AirportSimulator
             OpenAirplaneWindow(); 
         }
 
+        /// <summary>
+        /// Method that is called when the airplane is landing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Land(object sender, EventArgs e)
         {
+            /// Check if the airplane is able to land, if not, display a message and return
             if (!canLand)
             {
                 MessageBox.Show(Name + " is already on the ground");
                 return;
             }
+            // call the on landing method that sets the airplane canLand, altitude and stop the timer
             OnLanding();
-            string flightinfo = Name + " with flight Id: " + FlightID;
-            AirplaneEventArgs args = new AirplaneEventArgs(flightinfo, " has landed at " + Destination + " at: " + LocalTime);
+            // Create a new instance of the AirplaneEventArgs and invoke the event that the airplane has landed
+            AirplaneEventArgs args = new AirplaneEventArgs(this.ToString(), " has landed at " + Destination + " at: " + LocalTime);
             Landing?.Invoke(this, args);
+            // set the destination to home
             Destination = "Home";
+            // update the context of the airplane window
             airplaneWindow.UpdateContext(this);
 
         }
@@ -159,27 +170,56 @@ namespace AirportSimulator
         }
 
         /// <summary>
+        /// Method to subscribe to the altitude change event in the control tower.
+        /// Passing in the control tower as a parameter to be able to subscribe to the event
+        /// if the plane has already subscribed to the event, just return, else subscribe to the event
+        /// </summary>
+        /// <param name="controlTower"></param>
+        public void SubscribeToAltitudeChange(ControlTower controlTower)
+        {
+            // Check if the event is already subscribed, if it is, return
+            if (IsAltitudeChangeSubscribed)
+            {
+                return;
+            }
+            // Subscribe to the event
+            controlTower.ChangeAltitudeRequested += ChangeAltitude;
+        }
+       
+
+        /// <summary>
         /// Method to change the altitude of the airplane
         /// </summary>
         /// <param name="altitude"></param>
-        public void ChangeAltitude(int altitude)
+        public void ChangeAltitude(double altitude)
         {
-            if (altitude < 0) // Check if the altitude is negative
+            string msg;
+            if (!canLand) // Check if the airplane is on the ground
             {
-                MessageBox.Show("Altitude cannot be negative");
+                msg = " is on the ground, it cannot change altitude";
+            }
+            else if (altitude < 0) // Check if the altitude is negative
+            {
+                msg = ": Altitude cannot be negative";
             } else if (altitude > 14000) // Check if the altitude is higher than 14000
             {
-                MessageBox.Show("Altitude cannot be higher than 10000");
+                msg = ": Altitude cannot be higher than 14000";
             } else if (canLand && altitude <= 500) // Check if the airplane is in the air and the altitude is lower than 500
             {
-                MessageBox.Show(Name + " is in the air, the requested altitude is to low.");
+                msg = " is in the air, the requested altitude is to low.";
             } else // else, it is ok to change the altitude
             {
                 Altitude = altitude;
-                // call an event to print the new altitude, displayed as a message box for now
-                MessageBox.Show(Name + "'s altitude changed to: " + Altitude);
+                msg = " has changed altitude to: " + Altitude;
             }
+            // Create a new instance of the AirplaneEventArgs and invoke the event that the altitude has changed. The control tower is listening to this event to display the message there
+            AirplaneEventArgs args = new AirplaneEventArgs(this.ToString(), msg);
+            // Invoke the event
+            AltitudeChanged?.Invoke(this, args);
+            // update the context of the airplane window
+            airplaneWindow?.UpdateContext(this);
         }
+
 
 
         /// <summary>
@@ -202,6 +242,11 @@ namespace AirportSimulator
             // Add one hour to the local time
             LocalTime = LocalTime.AddHours(1);
         }
+
+        /// <summary>
+        /// Metod to print the airplane object as name and flight id
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return Name + ", " + FlightID;

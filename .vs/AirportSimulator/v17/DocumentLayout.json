@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\\u00C4GARE\\source\\repos\\AirportSimulator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|c:\\users\\\u00E4gare\\source\\repos\\airportsimulator\\airplanewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|solutionrelative:airplanewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|c:\\users\\\u00E4gare\\source\\repos\\airportsimulator\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|c:\\users\\\u00E4gare\\source\\repos\\airportsimulator\\airplanewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|solutionrelative:airplanewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|c:\\users\\\u00E4gare\\source\\repos\\airportsimulator\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|c:\\users\\\u00E4gare\\source\\repos\\airportsimulator\\controltower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|solutionrelative:controltower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|c:\\users\\\u00E4gare\\source\\repos\\airportsimulator\\airplanewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|solutionrelative:airplanewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|c:\\users\\\u00E4gare\\source\\repos\\airportsimulator\\airplaneeventargs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,18 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|c:\\users\\\u00E4gare\\source\\repos\\airportsimulator\\airplane.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|solutionrelative:airplane.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|c:\\users\\\u00E4gare\\source\\repos\\airportsimulator\\controltower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|solutionrelative:controltower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|c:\\users\\\u00E4gare\\source\\repos\\airportsimulator\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|c:\\users\\\u00E4gare\\source\\repos\\airportsimulator\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{11AA886F-018A-4B46-B4F6-AA4A8F753227}|AirportSimulator.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,17 +34,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Airplane.cs",
               "DocumentMoniker": "C:\\Users\\\u00C4GARE\\source\\repos\\AirportSimulator\\Airplane.cs",
               "RelativeDocumentMoniker": "Airplane.cs",
               "ToolTip": "C:\\Users\\\u00C4GARE\\source\\repos\\AirportSimulator\\Airplane.cs",
               "RelativeToolTip": "Airplane.cs",
-              "ViewState": "AQIAAFkAAAAAAAAAAAAowHQAAAAvAAAA",
+              "ViewState": "AQIAAL4AAAAAAAAAAAAIwM0AAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-22T16:10:30.704Z",
               "IsPinned": true,
@@ -56,76 +52,64 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\\u00C4GARE\\source\\repos\\AirportSimulator\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
               "ToolTip": "C:\\Users\\\u00C4GARE\\source\\repos\\AirportSimulator\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-26T14:33:22.598Z",
+              "WhenOpened": "2024-04-28T14:49:27.339Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AirplaneWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\\u00C4GARE\\source\\repos\\AirportSimulator\\AirplaneWindow.xaml",
-              "RelativeDocumentMoniker": "AirplaneWindow.xaml",
-              "ToolTip": "C:\\Users\\\u00C4GARE\\source\\repos\\AirportSimulator\\AirplaneWindow.xaml",
-              "RelativeToolTip": "AirplaneWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-26T10:58:28.709Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "AirplaneEventArgs.cs",
               "DocumentMoniker": "C:\\Users\\\u00C4GARE\\source\\repos\\AirportSimulator\\AirplaneEventArgs.cs",
               "RelativeDocumentMoniker": "AirplaneEventArgs.cs",
               "ToolTip": "C:\\Users\\\u00C4GARE\\source\\repos\\AirportSimulator\\AirplaneEventArgs.cs",
               "RelativeToolTip": "AirplaneEventArgs.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAIAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-26T09:20:47.65Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "AirplaneWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\\u00C4GARE\\source\\repos\\AirportSimulator\\AirplaneWindow.xaml.cs",
               "RelativeDocumentMoniker": "AirplaneWindow.xaml.cs",
               "ToolTip": "C:\\Users\\\u00C4GARE\\source\\repos\\AirportSimulator\\AirplaneWindow.xaml.cs",
               "RelativeToolTip": "AirplaneWindow.xaml.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAcwDEAAAA1AAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAIwBgAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-23T10:19:47.11Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "ControlTower.cs",
               "DocumentMoniker": "C:\\Users\\\u00C4GARE\\source\\repos\\AirportSimulator\\ControlTower.cs",
               "RelativeDocumentMoniker": "ControlTower.cs",
               "ToolTip": "C:\\Users\\\u00C4GARE\\source\\repos\\AirportSimulator\\ControlTower.cs",
               "RelativeToolTip": "ControlTower.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAwwDEAAABXAAAA",
+              "ViewState": "AQIAADsAAAAAAAAAAAAIwC4AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-22T16:09:49.464Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\\u00C4GARE\\source\\repos\\AirportSimulator\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\\u00C4GARE\\source\\repos\\AirportSimulator\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAAAAAEYAAAAIAAAA",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAAAGkAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-22T16:06:32.398Z",
               "EditorCaption": ""

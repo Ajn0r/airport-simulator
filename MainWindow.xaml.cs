@@ -101,11 +101,23 @@ namespace AirportSimulator
         {
             if (lstPlanes.SelectedItem != null)
             {
-                OpenAltitudeWindow();
+                int index = lstPlanes.SelectedIndex;
+                
+                controlTower.OrderChangeAltitude(index);
             }
             else
             {
                 MessageBox.Show("Please select an airplane");
+            }
+        }
+        private void OpenAltWindow()
+        {
+            // Using a messagebox to get the new altitude
+            Airplane airplane = (Airplane)lstPlanes.SelectedItem;
+            string newAltitude = Microsoft.VisualBasic.Interaction.InputBox("Enter the new altitude", "Change Altitude", airplane.Altitude.ToString());
+            if (double.TryParse(newAltitude, out double altitude))
+            {
+                airplane.ChangeAltitude(altitude);
             }
         }
 
@@ -177,13 +189,15 @@ namespace AirportSimulator
             if (
                 string.IsNullOrEmpty(txtName.Text) ||
                 string.IsNullOrEmpty(txtFlightID.Text) ||
-                string.IsNullOrEmpty(txtDestination.Text)||
-                !double.TryParse(txtFlightTime.Text, out double result) || result <= 0
-                )
+                string.IsNullOrEmpty(txtDestination.Text))
             {
                 MessageBox.Show("Please fill in all the fields");
                 return null;
-            } 
+            } else if (!double.TryParse(txtFlightTime.Text, out double result) || result <= 0)
+            {
+                MessageBox.Show("Please enter a valid flight time");
+                return null;
+            }
             else
             {
                 Airplane airplane = new Airplane(txtName.Text, txtFlightID.Text, txtDestination.Text, double.Parse(txtFlightTime.Text));
