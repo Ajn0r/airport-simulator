@@ -23,29 +23,31 @@ namespace AirportSimulator
             InitializeComponent();
             controlTower = new ControlTower(lstMessages);
             TestData();
-            UpdateGUI();
-            Application.Current.MainWindow = this;
         }
         private void UpdateGUI()
         {
             FillListBox();
         }
+
+        /// <summary>
+        /// Test data to fill the listbox with airplanes
+        /// </summary>
         private void TestData()
         {
             // Planes created for testing
             Airplane airplane1 = new Airplane("Boeing 747", "BA123", "London", 2.5);
             Airplane airplane2 = new Airplane("Airbus A380", "AF456", "Paris", 3.5);
             Airplane airplane3 = new Airplane("Boeing 737", "SK789", "Stockholm", 1.5);
-            Airplane airplane4 = new Airplane("Boeing 747", "BA123", "London", 2.5);
-            Airplane airplane5 = new Airplane("Airbus A380", "AF456", "Paris", 3.5);
-            Airplane airplane6 = new Airplane("Boeing 737", "SK789", "Stockholm", 1.5);
             controlTower.AddAirplane(airplane1);
             controlTower.AddAirplane(airplane2);
             controlTower.AddAirplane(airplane3);
-            controlTower.AddAirplane(airplane4);
-            controlTower.AddAirplane(airplane5);
-            controlTower.AddAirplane(airplane6);
+
+            UpdateGUI();
         }
+
+        /// <summary>
+        /// Method to fill the listbox with the airplanes in the control tower
+        /// </summary>
         private void FillListBox()
         {
             lstPlanes.Items.Clear();
@@ -54,6 +56,10 @@ namespace AirportSimulator
                 lstPlanes.Items.Add(airplane);
             }
         }
+
+        /// <summary>
+        /// Method to clear the textboxes
+        /// </summary>
         private void ClearTextBoxes()
         {
             txtName.Text = "";
@@ -80,11 +86,12 @@ namespace AirportSimulator
                 MessageBox.Show("Please select an airplane");
             }
         }
-        private void DisplayInfo(object sender, AirplaneEventArgs e)
-        {
-            lstMessages.Items.Add(e.Flight + e.Message);
-        }   
-
+  
+        /// <summary>
+        /// Method to handle the add button click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             Airplane? airplane = ReadAndSavePlaneInfo();
@@ -96,7 +103,11 @@ namespace AirportSimulator
             UpdateGUI();
         }
 
-
+        /// <summary>
+        /// Method to handle the change altitude button click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnChangeAltitude_Click(object sender, RoutedEventArgs e)
         {
             if (lstPlanes.SelectedItem != null)
@@ -110,82 +121,14 @@ namespace AirportSimulator
                 MessageBox.Show("Please select an airplane");
             }
         }
-        private void OpenAltWindow()
-        {
-            // Using a messagebox to get the new altitude
-            Airplane airplane = (Airplane)lstPlanes.SelectedItem;
-            string newAltitude = Microsoft.VisualBasic.Interaction.InputBox("Enter the new altitude", "Change Altitude", airplane.Altitude.ToString());
-            if (double.TryParse(newAltitude, out double altitude))
-            {
-                airplane.ChangeAltitude(altitude);
-            }
-        }
-
-        private void OpenAltitudeWindow()
-        {
-            Airplane airplane = (Airplane)lstPlanes.SelectedItem;
-            Window altitudeWindow = new Window
-            {
-                Title = "Change Altitude",
-                Width = 250,
-                Height = 150,
-                WindowStartupLocation = WindowStartupLocation.CenterScreen
-            };
-
-            StackPanel stackPanel = new StackPanel();
-                
-            Label altLbl = new Label { Content = "Enter the new altitude", Margin = new Thickness(10) };
-            TextBox txtAltitude = new TextBox { Name = "txtAltitude", Margin = new Thickness(10), HorizontalAlignment = HorizontalAlignment.Center, Width = 75 };
-    
-            stackPanel.Children.Add(altLbl);
-            stackPanel.Children.Add(txtAltitude);
-            StackPanel buttonPanel = new StackPanel
-            {
-                Orientation = Orientation.Horizontal,
-
-                HorizontalAlignment = HorizontalAlignment.Center,
-                Margin = new Thickness(10)
-            };
-
-            Button btnOk = new Button
-            {
-                Content = "OK",
-                Margin = new Thickness(5)
-            };
-            btnOk.Click += (sender, e) =>
-            {
-                // Hämta den nya höjden från textboxen och ändra höjden
-                if (double.TryParse(txtAltitude.Text, out double newAltitude))
-                {
-                    airplane.Altitude = newAltitude;
-                }
-                altitudeWindow.Close();
-            };
-            buttonPanel.Children.Add(btnOk);
-
-            Button btnCancel = new Button
-            {
-                Content = "Cancel",
-                Margin = new Thickness(5)
-            };
-            btnCancel.Click += (sender, e) =>
-            {
-                altitudeWindow.Close();
-            };
-            buttonPanel.Children.Add(btnCancel);
-
-            stackPanel.Children.Add(buttonPanel);
-
-            // Lägg till innehåll till fönstret
-            altitudeWindow.Content = stackPanel;
-
-            // Visa fönstret
-            altitudeWindow.ShowDialog();
-
-        }
-
+        
+        /// <summary>
+        /// Method to read the information from the textboxes and save it in an airplane object
+        /// </summary>
+        /// <returns></returns>
         private Airplane? ReadAndSavePlaneInfo()
         {
+            // Validate the input
             if (
                 string.IsNullOrEmpty(txtName.Text) ||
                 string.IsNullOrEmpty(txtFlightID.Text) ||
@@ -200,6 +143,7 @@ namespace AirportSimulator
             }
             else
             {
+                // Create an airplane object with the information from the textboxes
                 Airplane airplane = new Airplane(txtName.Text, txtFlightID.Text, txtDestination.Text, double.Parse(txtFlightTime.Text));
                 return airplane;
             }

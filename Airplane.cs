@@ -42,12 +42,13 @@ namespace AirportSimulator
         {
             // Create a new instance of the AirplaneWindow
             airplaneWindow = new AirplaneWindow(this);
-            // Subscribe to the TakeOffButtonClicked event
+            // Subscribe to the TakeOffButtonClicked and LandButtoncli´cked event in the airplane window class
             airplaneWindow.TakeOffButtonClicked += TakingOff;
             airplaneWindow.LandButtonClicked += Land;
+            // Subscribe to the closing event of the window
             airplaneWindow.Closing += ClosingWindow;
             airplaneWindow.Show(); // Show the window
-            OpenWindow = true;
+            OpenWindow = true; // Set the open window property to true to indicate that the window is open and only allow it to be opened once
             airplaneWindow.DataContext = this;
         }
 
@@ -59,6 +60,12 @@ namespace AirportSimulator
         /// <param name="e"></param>
         private void ClosingWindow(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            if (canLand) // Check if the airplane is in the air, then inform the user to land the airplane before closing the window
+            {
+                MessageBox.Show(this.ToString() + " is in the air, please land first", "Cannot close window");
+                e.Cancel = true;
+                return;
+            }
             // Ask the user if they are sure they want to close the window
             MessageBoxResult result = MessageBox.Show("Are you sure you want to close the window?", "Close window", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)

@@ -29,16 +29,29 @@ namespace AirportSimulator
             DataContext = airplane;
         }
 
+        // Event handlers for the take off and land buttons clicked, the airplane class is listening to these events
         public event EventHandler TakeOffButtonClicked;
         public event EventHandler LandButtonClicked;
 
+        /// <summary>
+        /// Method to handle the event when the land button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LandButton_Click(object sender, RoutedEventArgs e)
         {
+            // Invoke the event when the land button is clicked
             LandButtonClicked?.Invoke(this, EventArgs.Empty);
         }
 
+        /// <summary>
+        /// Method to handle the event when the take off button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TakeOffButton_Click(object sender, RoutedEventArgs e)
         {
+            // Invoke the event when the take off button is clicked
             TakeOffButtonClicked?.Invoke(this, EventArgs.Empty);
 
         }
